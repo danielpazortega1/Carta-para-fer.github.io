@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fernanda</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Libre+Baskerville&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #f6f1e7;
+      font-family: 'Libre Baskerville', serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .sobre {
+      width: 300px;
+      height: 200px;
+      background: #d7b98b;
+      border: 2px solid #a48b61;
+      border-radius: 10px;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.8s ease;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+    .sobre::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 49.5%, #a48b61 49.5%, #a48b61 50.5%, transparent 50.5%);
+      z-index: 2;
+      pointer-events: none;
+    }
+    .carta {
+      width: 90%;
+      max-width: 600px;
+      background-color: #fff8dc;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      font-size: 1rem;
+      color: #3e2f1c;
+      display: none;
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .carta h1 {
+      font-family: 'Great Vibes', cursive;
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .mostrar {
+      display: block;
+      animation: abrir 1s ease forwards;
+    }
+    @keyframes abrir {
+      0% { opacity: 0; transform: scale(0.8) translate(-50%, -50%); }
+      100% { opacity: 1; transform: scale(1) translate(-50%, -50%); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="sobre" onclick="abrirCarta()"></div>
+
+<div id="carta" class="carta">
+  <h1>Fernanda</h1>
+  <p>Hola, quería escribirte hoy una carta, bueno tengo las ganas desde que estaba en esquipulas pero no me dio el tiempo :( Sé que nunca te han escrito una y esta pues no es una carta física como tal, pero es hecha de mi corazón para ti. Pues ya hace un tiempecito que empezamos a hablar y aunque nunca tuvimos la oportunidad de conocernos como amigos, sé que la relación que estamos entrelazando es bonita y única, es como una cuerda doble.</p>
+  <p>Me gusta porque a pesar del poco tiempo se siente que es algo muy sólido y bonito. Sé que me equivoco mucho, porque la carne es débil, pero fuera de eso, el tipo de relación que estamos creando es bonita. Todos los días aprendo algo de ti, todos los días veo cosas nuevas que me gustan. Siento que estamos conociéndonos de una bonita forma y pues quiero que siga siendo así.</p>
+  <p>Espero podamos seguirnos conociendo para un día poder decir, con seguridad, todo de ti, poder describirte como tú lo harías o hasta mejor, poder saber tu comida favorita, tu color favorito, tu momento del día donde estás más feliz, tus días de bajón. Quiero conocer todo, quiero adentrarme al alma tuya, poder ver lo que nadie ha querido ver antes, quiero conocerte mucho.</p>
+  <p>Físicamente me gustas, eso es obvio, pero ¿qué hay del alma? Quiero que mi alma se enamore de ti, porque cuando estemos viejitos y tu piel se estire, siga estando el alma de la cual una vez me enamoré.</p>
+  <p>Te quiero mucho Fer. Esta es una pequeña carta para ti, a la distancia… te extraño y te quiero mucho.</p>
+</div>
+
+<script>
+  function abrirCarta() {
+    document.querySelector('.sobre').style.display = 'none';
+    document.getElementById('carta').classList.add('mostrar');
+  }
+</script>
+
+</body>
+</html>
